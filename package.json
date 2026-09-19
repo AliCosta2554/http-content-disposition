@@ -1,0 +1,17 @@
+{
+  "name": "http-content-disposition",
+  "version": "0.1.0",
+  "description": "Parses and builds Content-Disposition headers including RFC 5987 extended filename parameters.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
