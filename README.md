@@ -27,3 +27,10 @@ Most server frameworks expose a parsed version of this header, but the shape is 
 ## Edge cases
 
 When both `filename` and `filename*` are present, parsing returns both but `filename*` takes precedence for consumers that pick one value. Building always emits `filename*` for Unicode-safe transfer and adds a plain `filename` only when the name is an RFC 2616 token. Extended parameters are decoded only for UTF-8, as required by RFC 5987.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
